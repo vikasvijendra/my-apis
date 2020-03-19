@@ -1,0 +1,462 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "resourceType",
+        "gender",
+        "active",
+        "indetifier",
+        "telecom",
+        "address",
+        "bp_id",
+        "indetifiers_issued",
+        "telecoms",
+        "addresses"
+    ],
+    "properties": {
+        "resourceType": {
+            "$id": "#/properties/resourceType",
+            "type": "string",
+            "title": "The Resourcetype Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Patient"
+            ]
+        },
+        "gender": {
+            "$id": "#/properties/gender",
+            "type": "string",
+            "title": "The Gender Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Male"
+            ]
+        },
+        "active": {
+            "$id": "#/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "indetifier": {
+            "$id": "#/properties/indetifier",
+            "type": "object",
+            "title": "The Indetifier Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "value": 1000399901.0,
+                    "use": "official"
+                }
+            ],
+            "required": [
+                "use",
+                "value"
+            ],
+            "properties": {
+                "use": {
+                    "$id": "#/properties/indetifier/properties/use",
+                    "type": "string",
+                    "title": "The Use Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "official"
+                    ]
+                },
+                "value": {
+                    "$id": "#/properties/indetifier/properties/value",
+                    "type": "integer",
+                    "title": "The Value Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        1000399901
+                    ]
+                }
+            }
+        },
+        "telecom": {
+            "$id": "#/properties/telecom",
+            "type": "array",
+            "title": "The Telecom Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "items": {
+                "$id": "#/properties/telecom/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "system": "email",
+                        "use": "home",
+                        "value": 9999999.0
+                    },
+                    {
+                        "value": 9999999.0,
+                        "system": "phone",
+                        "use": "mobile"
+                    },
+                    {
+                        "value": 9999999.0,
+                        "system": "phone",
+                        "use": "home"
+                    }
+                ],
+                "required": [
+                    "system",
+                    "use",
+                    "value"
+                ],
+                "properties": {
+                    "system": {
+                        "$id": "#/properties/telecom/items/properties/system",
+                        "type": "string",
+                        "title": "The System Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "email"
+                        ]
+                    },
+                    "use": {
+                        "$id": "#/properties/telecom/items/properties/use",
+                        "type": "string",
+                        "title": "The Use Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "home"
+                        ]
+                    },
+                    "value": {
+                        "$id": "#/properties/telecom/items/properties/value",
+                        "type": "integer",
+                        "title": "The Value Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            9999999
+                        ]
+                    }
+                }
+            }
+        },
+        "address": {
+            "$id": "#/properties/address",
+            "type": "array",
+            "title": "The Address Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "items": {
+                "$id": "#/properties/address/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "type": "physical",
+                        "text": "12 REA ST, Tehop2, GREENACRE, New South Wales - 2190",
+                        "use": "home",
+                        "postalCode": "2190",
+                        "city": "GREENACRE",
+                        "state": "New South Wales"
+                    }
+                ],
+                "required": [
+                    "use",
+                    "type",
+                    "text",
+                    "city",
+                    "state",
+                    "postalCode"
+                ],
+                "properties": {
+                    "use": {
+                        "$id": "#/properties/address/items/properties/use",
+                        "type": "string",
+                        "title": "The Use Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "home"
+                        ]
+                    },
+                    "type": {
+                        "$id": "#/properties/address/items/properties/type",
+                        "type": "string",
+                        "title": "The Type Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "physical"
+                        ]
+                    },
+                    "text": {
+                        "$id": "#/properties/address/items/properties/text",
+                        "type": "string",
+                        "title": "The Text Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "12 REA ST, Tehop2, GREENACRE, New South Wales - 2190"
+                        ]
+                    },
+                    "city": {
+                        "$id": "#/properties/address/items/properties/city",
+                        "type": "string",
+                        "title": "The City Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "GREENACRE"
+                        ]
+                    },
+                    "state": {
+                        "$id": "#/properties/address/items/properties/state",
+                        "type": "string",
+                        "title": "The State Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "New South Wales"
+                        ]
+                    },
+                    "postalCode": {
+                        "$id": "#/properties/address/items/properties/postalCode",
+                        "type": "string",
+                        "title": "The Postalcode Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "2190"
+                        ]
+                    }
+                }
+            }
+        },
+        "bp_id": {
+            "$id": "#/properties/bp_id",
+            "type": "integer",
+            "title": "The Bp_id Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1000399901
+            ]
+        },
+        "indetifiers_issued": {
+            "$id": "#/properties/indetifiers_issued",
+            "type": "object",
+            "title": "The Indetifiers_issued Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "use": null,
+                    "value": 0.0
+                }
+            ],
+            "required": [
+                "use",
+                "value"
+            ],
+            "properties": {
+                "use": {
+                    "$id": "#/properties/indetifiers_issued/properties/use",
+                    "title": "The Use Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                        null
+                    ]
+                },
+                "value": {
+                    "$id": "#/properties/indetifiers_issued/properties/value",
+                    "type": "integer",
+                    "title": "The Value Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                }
+            }
+        },
+        "telecoms": {
+            "$id": "#/properties/telecoms",
+            "type": "array",
+            "title": "The Telecoms Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "items": {
+                "$id": "#/properties/telecoms/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "value": 9999999.0,
+                        "system": "email",
+                        "use": "home"
+                    },
+                    {
+                        "value": 9999999.0,
+                        "system": "phone",
+                        "use": "mobile"
+                    },
+                    {
+                        "system": "phone",
+                        "use": "home",
+                        "value": 9999999.0
+                    }
+                ],
+                "required": [
+                    "system",
+                    "use",
+                    "value"
+                ],
+                "properties": {
+                    "system": {
+                        "$id": "#/properties/telecoms/items/properties/system",
+                        "type": "string",
+                        "title": "The System Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "email"
+                        ]
+                    },
+                    "use": {
+                        "$id": "#/properties/telecoms/items/properties/use",
+                        "type": "string",
+                        "title": "The Use Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "home"
+                        ]
+                    },
+                    "value": {
+                        "$id": "#/properties/telecoms/items/properties/value",
+                        "type": "integer",
+                        "title": "The Value Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            9999999
+                        ]
+                    }
+                }
+            }
+        },
+        "addresses": {
+            "$id": "#/properties/addresses",
+            "type": "array",
+            "title": "The Addresses Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "items": {
+                "$id": "#/properties/addresses/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "use": "home",
+                        "postalCode": "2190",
+                        "city": "GREENACRE",
+                        "state": "New South Wales",
+                        "type": "physical",
+                        "text": "12 REA ST, Tehop2, GREENACRE, New South Wales - 2190"
+                    }
+                ],
+                "required": [
+                    "use",
+                    "type",
+                    "text",
+                    "city",
+                    "state",
+                    "postalCode"
+                ],
+                "properties": {
+                    "use": {
+                        "$id": "#/properties/addresses/items/properties/use",
+                        "type": "string",
+                        "title": "The Use Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "home"
+                        ]
+                    },
+                    "type": {
+                        "$id": "#/properties/addresses/items/properties/type",
+                        "type": "string",
+                        "title": "The Type Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "physical"
+                        ]
+                    },
+                    "text": {
+                        "$id": "#/properties/addresses/items/properties/text",
+                        "type": "string",
+                        "title": "The Text Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "12 REA ST, Tehop2, GREENACRE, New South Wales - 2190"
+                        ]
+                    },
+                    "city": {
+                        "$id": "#/properties/addresses/items/properties/city",
+                        "type": "string",
+                        "title": "The City Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "GREENACRE"
+                        ]
+                    },
+                    "state": {
+                        "$id": "#/properties/addresses/items/properties/state",
+                        "type": "string",
+                        "title": "The State Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "New South Wales"
+                        ]
+                    },
+                    "postalCode": {
+                        "$id": "#/properties/addresses/items/properties/postalCode",
+                        "type": "string",
+                        "title": "The Postalcode Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "2190"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
