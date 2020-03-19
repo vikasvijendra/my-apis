@@ -6,6 +6,8 @@
     "description": "The root schema comprises the entire JSON document.",
     "required": [
         "resourceType",
+        "firstName",
+        "lastName",
         "gender",
         "active",
         "indetifier",
@@ -25,6 +27,26 @@
             "default": "",
             "examples": [
                 "Patient"
+            ]
+        },
+        "firstName": {
+            "$id": "#/properties/firstName",
+            "type": "string",
+            "title": "The Firstname Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "John"
+            ]
+        },
+        "lastName": {
+            "$id": "#/properties/lastName",
+            "type": "string",
+            "title": "The Lastname Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Doe"
             ]
         },
         "gender": {
@@ -100,14 +122,14 @@
                 "default": {},
                 "examples": [
                     {
+                        "value": 9999999.0,
                         "system": "email",
-                        "use": "home",
-                        "value": 9999999.0
+                        "use": "home"
                     },
                     {
-                        "value": 9999999.0,
                         "system": "phone",
-                        "use": "mobile"
+                        "use": "mobile",
+                        "value": 9999999.0
                     },
                     {
                         "value": 9999999.0,
@@ -266,8 +288,8 @@
             "default": {},
             "examples": [
                 {
-                    "use": null,
-                    "value": 0.0
+                    "value": 0.0,
+                    "use": null
                 }
             ],
             "required": [
@@ -320,9 +342,9 @@
                         "use": "mobile"
                     },
                     {
+                        "value": 9999999.0,
                         "system": "phone",
-                        "use": "home",
-                        "value": 9999999.0
+                        "use": "home"
                     }
                 ],
                 "required": [
@@ -378,12 +400,12 @@
                 "default": {},
                 "examples": [
                     {
+                        "text": "12 REA ST, Tehop2, GREENACRE, New South Wales - 2190",
                         "use": "home",
                         "postalCode": "2190",
                         "city": "GREENACRE",
                         "state": "New South Wales",
-                        "type": "physical",
-                        "text": "12 REA ST, Tehop2, GREENACRE, New South Wales - 2190"
+                        "type": "physical"
                     }
                 ],
                 "required": [
